@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Networking Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Computer Networking Project Website</h1>
+        <div class="student-info">
+            Name: Peter Oyekanmi <br>
+            Student Year: Senior
+        </div>
+
+        <!-- Setup Process Section -->
+        <button class="btn" onclick="toggleSection('setupProcess', this, 'Setup Process')">Click Here for Setup Process</button>
+        <div class="info" id="setupProcess">
+            <div class="section">
+                <h2>Setup Process</h2>
+                <p>Made Website and acquired the Domain. Created a new GitHub repository for access. Created the website using HTML and CSS. Pushed the HTML and CSS code to the repository. Turned in project.</p>
+            </div>
+        </div>
+
+        <!-- Challenges Section -->
+        <button class="btn" onclick="toggleSection('challenges', this, 'Challenges Faced')">Click Here for Challenges Faced</button>
+        <div class="info" id="challenges">
+            <div class="section">
+                <h2>Challenges Faced While Making Project</h2>
+                <p>First was finding people to do the project with, ended up doing it by myself. Then finding the domain and website to do the project with. Which was more challenging than I thought it was going to be.</p>
+            </div>
+        </div>
+
+        <!-- Networking Principles Section -->
+        <button class="btn" onclick="toggleSection('networkingPrinciples', this, 'Networking Principles')">Click Here for Networking Principles</button>
+        <div class="info" id="networkingPrinciples">
+            <div class="section">
+                <h2>Networking Principles and Protocols Applied</h2>
+                <p>When a user enters your domain, the DNS translates it into an IP address. Netlify’s DNS ensures fast domain resolution. When using GitHub, changes are pushed via Git to Netlify. Netlify also provides built-in DDoS protection and WAF, which helps keep user information secure and protected.</p>
+            </div>
+        </div>
+
+        <!-- Tools Used Section -->
+        <button class="btn" onclick="toggleSection('toolsUsed', this, 'Tools Used')">Click Here for Tools Used</button>
+        <div class="info" id="toolsUsed">
+            <div class="section">
+                <h2>Tools Used</h2>
+                <ul>
+                    <li>Visual Studio Code</li>
+                    <li>Notepad</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Netlify</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contact Me Section -->
+        <div class="contact">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:poyekanmi2@student.gsu.edu">poyekanmi2@student.gsu.edu</a></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(sectionId, button, sectionName) {
+            let section = document.getElementById(sectionId);
+            if (section.style.display === "block") {
+                section.style.display = "none";
+                button.innerText = "Click Here for " + sectionName;
+            } else {
+                section.style.display = "block";
+                button.innerText = "Click Here to Hide " + sectionName;
+            }
+        }
+    </script>
+</body>
+</html>
