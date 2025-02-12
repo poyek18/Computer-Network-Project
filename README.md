@@ -16,10 +16,12 @@ Networking Principles and Protocols Applied
 DNS Resolution: When a user enters the domain name, the DNS translates it into an IP address.
 Netlify’s DNS ensures fast and reliable domain resolution.
 Git Version Control: Changes to the website are managed using Git and pushed to GitHub, which integrates with Netlify for automated deployment.
-Security Protocols: The website is protected with Netlify’s built-in DDoS protection and Web Application Firewall (WAF) to ensure security.
+Security Protocols: The website is protected with Netlify’s built-in DDoS protection and WAF to ensure security.
 Tools Used
 Visual Studio Code (for code editing)
 Notepad (for quick edits)
 HTML (for website structure)
 CSS (for styling)
 Netlify (for hosting and deployment)
+# Netorking Aspects
+When a user enters your domain, the DNS translates it into an IP address. Netlify’s DNS ensures fast domain resolution. When using GitHub, changes are pushed via Git to Netlify. Netlify also provides built-in DDoS protection and WAF, which helps keep user information secure and protected. HTTPS is also used within Netlify to ensure communcation between user and website is encrypted and secure.
