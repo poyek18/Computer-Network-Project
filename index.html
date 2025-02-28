@@ -5,65 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Networking Project</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Hide main content until reCAPTCHA is completed */
+        #main-content {
+            display: none;
+        }
+        .recaptcha-container {
+            text-align: center;
+            margin-top: 100px;
+        }
+        /* Change the color of "Please verify you are human" */
+        .recaptcha-container h2 {
+            color: red; /* Change this to any color you want */
+            font-size: 24px;
+            font-weight: bold;
+        }
+        /* Lazy loading image effect */
+        img {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        img.loaded {
+            opacity: 1;
+        }
+    </style>
+
+    <!-- ✅ Google Analytics Tracking Code -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEPKZ2VV4D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PEPKZ2VV4D');
+    </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to My Computer Networking Project Website</h1>
-        <div class="student-info">
-            Name: Peter Oyekanmi <br>
-            Student Year: Senior
-        </div>
+    <!-- reCAPTCHA Verification Screen -->
+    <div class="recaptcha-container" id="recaptcha-container">
+        <h2>Please verify you are human to access the website</h2>
+        <div class="g-recaptcha" data-sitekey="6Lcg8OQqAAAAAO8uWgOoxVcXJbkiLvfU-Nf9nAsF" data-callback="onRecaptchaSuccess"></div>
+    </div>
 
-        <!-- Setup Process Section -->
-        <button class="btn" onclick="toggleSection('setupProcess', this, 'Setup Process')">Click Here for Setup Process</button>
-        <div class="info" id="setupProcess">
-            <div class="section">
-                <h2>Setup Process</h2>
-                <p>Made Website and acquired the Domain. Created a new GitHub repository for access. Created the website using HTML and CSS. Pushed the HTML and CSS code to the repository. Turned in project.</p>
+    <!-- Main Website Content (Hidden Until Verified) -->
+    <div id="main-content">
+        <div class="container">
+            <h1>Welcome to My Computer Networking Project Website</h1>
+            <div class="student-info">
+                Name: Peter Oyekanmi <br>
+                Student Year: Senior
             </div>
-        </div>
 
-        <!-- Challenges Section -->
-        <button class="btn" onclick="toggleSection('challenges', this, 'Challenges Faced')">Click Here for Challenges Faced</button>
-        <div class="info" id="challenges">
-            <div class="section">
-                <h2>Challenges Faced While Making Project</h2>
-                <p>First was finding people to do the project with, ended up doing it by myself. Then finding the domain and website to do the project with. Which was more challenging than I thought it was going to be.</p>
+            <!-- Setup Process Section -->
+            <button class="btn" onclick="toggleSection('setupProcess', this, 'Setup Process')">Click Here for Setup Process</button>
+            <div class="info" id="setupProcess">
+                <div class="section">
+                    <h2>Setup Process</h2>
+                    <p>Made Website and acquired the Domain. Created a new GitHub repository for access. Created the website using HTML and CSS. Pushed the HTML and CSS code to the repository. Turned in project.</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Networking Principles Section -->
-        <button class="btn" onclick="toggleSection('networkingPrinciples', this, 'Networking Principles')">Click Here for Networking Principles</button>
-        <div class="info" id="networkingPrinciples">
-            <div class="section">
-                <h2>Networking Principles and Protocols Applied</h2>
-                <p>When a user enters your domain, the DNS translates it into an IP address. Netlify’s DNS ensures fast domain resolution. When using GitHub, changes are pushed via Git to Netlify. Netlify also provides built-in DDoS protection and WAF, which helps keep user information secure and protected.</p>
+            <!-- Challenges Section -->
+            <button class="btn" onclick="toggleSection('challenges', this, 'Challenges Faced')">Click Here for Challenges Faced</button>
+            <div class="info" id="challenges">
+                <div class="section">
+                    <h2>Challenges Faced While Making Project</h2>
+                    <p>First was finding people to do the project with, ended up doing it by myself. Then finding the domain and website to do the project with. Which was more challenging than I thought it was going to be.</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Tools Used Section -->
-        <button class="btn" onclick="toggleSection('toolsUsed', this, 'Tools Used')">Click Here for Tools Used</button>
-        <div class="info" id="toolsUsed">
-            <div class="section">
-                <h2>Tools Used</h2>
-                <ul>
-                    <li>Visual Studio Code</li>
-                    <li>Notepad</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>Netlify</li>
-                </ul>
+            <!-- Networking Principles Section -->
+            <button class="btn" onclick="toggleSection('networkingPrinciples', this, 'Networking Principles')">Click Here for Networking Principles</button>
+            <div class="info" id="networkingPrinciples">
+                <div class="section">
+                    <h2>Networking Principles and Protocols Applied</h2>
+                    <p>When a user enters your domain, the DNS translates it into an IP address. Netlify’s DNS ensures fast domain resolution. When using GitHub, changes are pushed via Git to Netlify. Netlify also provides built-in DDoS protection and WAF, which helps keep user information secure and protected.</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Contact Me Section -->
-        <div class="contact">
-            <h2>Contact Me</h2>
-            <p>Email: <a href="mailto:poyekanmi2@student.gsu.edu">poyekanmi2@student.gsu.edu</a></p>
+            <!-- Tools Used Section -->
+            <button class="btn" onclick="toggleSection('toolsUsed', this, 'Tools Used')">Click Here for Tools Used</button>
+            <div class="info" id="toolsUsed">
+                <div class="section">
+                    <h2>Tools Used</h2>
+                    <ul>
+                        <li>Visual Studio Code</li>
+                        <li>Notepad</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Netlify</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Images with Lazy Loading -->
+            <h2>Project Images</h2>
+            <img src="network-diagram.jpg" alt="Network Diagram" loading="lazy">
+            <img src="server-setup.png" alt="Server Setup" loading="lazy">
+            <img src="architecture.jpg" alt="Network Architecture" loading="lazy">
+
+            <!-- Contact Me Section -->
+            <div class="contact">
+                <h2>Contact Me</h2>
+                <p>Email: <a href="mailto:poyekanmi2@student.gsu.edu">poyekanmi2@student.gsu.edu</a></p>
+            </div>
         </div>
     </div>
 
+    <!-- Load Google reCAPTCHA script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <script>
+        function onRecaptchaSuccess() {
+            // Hide the reCAPTCHA container
+            document.getElementById("recaptcha-container").style.display = "none";
+            // Show the main website content
+            document.getElementById("main-content").style.display = "block";
+        }
+
         function toggleSection(sectionId, button, sectionName) {
             let section = document.getElementById(sectionId);
             if (section.style.display === "block") {
@@ -74,6 +132,17 @@
                 button.innerText = "Click Here to Hide " + sectionName;
             }
         }
+
+        // Lazy loading images effect
+        document.addEventListener("DOMContentLoaded", function () {
+            let lazyImages = document.querySelectorAll("img[loading='lazy']");
+            lazyImages.forEach(img => {
+                img.addEventListener("load", () => {
+                    img.classList.add("loaded");
+                });
+            });
+        });
     </script>
 </body>
 </html>
+
