@@ -1,0 +1,25 @@
+# Netlify Configuration File
+
+[build]
+  command = "" # No build command needed for a static site
+  publish = "/" # Root directory
+
+# Force HTTPS for security
+[[redirects]]
+  from = "http://*mycomputernetworkingproj1.netlify.app/*"
+  to = "https://mycomputernetworkingproj1.netlify.app/:splat"
+  status = 301
+  force = true
+
+# Enable custom headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+
+# Enable serverless functions
+[functions]
+  node_bundler = "esbuild"
