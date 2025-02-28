@@ -25,3 +25,6 @@ CSS (for styling)
 Netlify (for hosting and deployment)
 # Netorking Aspects
 When a user enters your domain, the DNS translates it into an IP address. Netlify’s DNS ensures fast domain resolution. When using GitHub, changes are pushed via Git to Netlify. Netlify also provides built-in DDoS protection and WAF, which helps keep user information secure and protected. HTTPS is also used within Netlify to ensure communcation between user and website is encrypted and secure.
+# How to access website 
+
+Click on the link
